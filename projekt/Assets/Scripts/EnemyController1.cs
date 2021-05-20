@@ -28,7 +28,7 @@ public class EnemyController1 : MonoBehaviour
     {
         var velocity = navAgent.velocity.magnitude / navAgent.speed;
         anim.SetFloat(SpeedFloat, velocity);
-        if (Input.GetKeyDown(KeyCode.Alpha2) && !anim.GetCurrentAnimatorStateInfo(0).IsName("Stand To Sit"))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && !anim.GetCurrentAnimatorStateInfo(0).IsName("Stand To Sit") && navAgent.enabled==true)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -102,5 +102,6 @@ public class EnemyController1 : MonoBehaviour
         promjenapozicije();
         float yRotation = 180 - transform.eulerAngles.y;
         this.transform.Rotate(0f, (360 + yRotation), 0f);
+        navAgent.enabled = false;
     }
 }

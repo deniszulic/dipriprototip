@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
         var velocity = navAgent.velocity.magnitude / navAgent.speed;
         anim.SetFloat(SpeedFloat, velocity);
         dist = Vector3.Distance(napadni.transform.position, transform.position);
-        if (Input.GetKey(KeyCode.Alpha1) && napad == false)
+        if (Input.GetKey(KeyCode.Alpha1) && napad == false && navAgent.enabled==true)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
