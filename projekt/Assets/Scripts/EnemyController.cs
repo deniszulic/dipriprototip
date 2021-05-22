@@ -58,6 +58,8 @@ public class EnemyController : MonoBehaviour
         {
             anim.SetInteger(diedInt, 1);
             navAgent.enabled = false;
+            gameObject.GetComponent< DialogueManager2>().enabled = false;
+            //GetComponent("ScriptName").enabled = false;
             elapsed += Time.deltaTime;
             if (elapsed >= 3f)
             {

@@ -5,6 +5,9 @@ public enum SoundType
 {
     Punch,
     Death,
+    EngineIdle,
+    EngineSpeed,
+    Brakes,
     BackgroundTheme
 }
 
