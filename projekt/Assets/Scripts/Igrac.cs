@@ -19,13 +19,21 @@ public class Igrac : MonoBehaviour
     public GameObject pomocnik;
     public GameObject collider;
     public GameObject character;
+    public Texture2D crosshair;
 
+    void OnGUI()
+    {
+        GUI.DrawTexture(new Rect(Screen.width / 2 - (crosshair.width * 0.5f),
+                                    Screen.height / 2 - (crosshair.height * 0.5f),
+                                         crosshair.width, crosshair.height), crosshair);
+    }
     void Awake()
     {
         collider.GetComponent<BoxCollider>().enabled = false;
     }
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         anim = GetComponent<Animator>();
         animation = GetComponent<Animation>();
     }
